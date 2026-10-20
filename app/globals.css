@@ -125,6 +125,9 @@ a:focus-visible {
 }
 
 .nav-links a {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
   text-decoration: none;
 }
 
@@ -144,6 +147,10 @@ a:focus-visible {
   font-size: 14px;
   font-weight: 700;
   text-decoration: none;
+}
+
+.nav-cta {
+  white-space: nowrap;
 }
 
 .nav-cta {
@@ -654,7 +661,7 @@ h3 {
     order: 3;
     width: 100%;
     justify-content: space-between;
-    gap: 12px;
+    gap: 6px;
     padding-top: 4px;
     font-size: 13px;
   }
