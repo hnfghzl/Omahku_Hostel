@@ -2,7 +2,13 @@ import Image from "next/image";
 import HeroSlideshow from "./components/HeroSlideshow";
 
 const whatsappLink =
-  "https://wa.me/6282252288526?text=Halo%2C%20saya%20ingin%20menyusun%20private%20tour%20dari%20Omahku%20Hostel.";
+  "https://wa.me/6283867370668?text=Halo%2C%20saya%20ingin%20menyusun%20private%20tour%20dari%20Omahku%20Hostel.";
+const phoneLink = "tel:+6283867370668";
+const phoneDisplay = "+62 838-6737-0668";
+const hostelAddress =
+  "Timuran No.171, Brontokusuman, Kec. Mergangsan, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55153";
+const mapsLink =
+  "https://www.google.com/maps/search/?api=1&query=Timuran%20No.171%2C%20Brontokusuman%2C%20Kec.%20Mergangsan%2C%20Kota%20Yogyakarta%2C%20Daerah%20Istimewa%20Yogyakarta%2055153";
 
 const lodgingGallery = [
   { src: "/omahku-kamar.png", alt: "Kamar dengan tempat tidur susun di Omahku Hostel" },
@@ -191,6 +197,18 @@ export default function Home() {
         <div>
           <p className="eyebrow">Siap membicarakan rencana?</p>
           <h2 id="contact-title">Rencanakan perjalanan setelah menginap.</h2>
+          <p className="contact-address">
+            Omahku Hostel
+            <br />
+            {hostelAddress}
+          </p>
+          <a className="contact-phone" href={phoneLink}>
+            WhatsApp: {phoneDisplay}
+          </a>
+          <br />
+          <a className="contact-location" href={mapsLink} target="_blank" rel="noreferrer">
+            Buka lokasi di Google Maps
+          </a>
         </div>
         <a className="button button-light" href={whatsappLink} target="_blank" rel="noreferrer">
           Hubungi lewat WhatsApp
