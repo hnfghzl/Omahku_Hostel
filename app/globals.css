@@ -312,6 +312,7 @@ h3 {
 
 .hero-slideshow .hero-slide {
   object-fit: cover;
+  object-position: center center;
   opacity: 0;
   animation: hero-fade 20s infinite ease-in-out;
 }
@@ -706,6 +707,10 @@ h3 {
     display: block;
     min-height: auto;
     padding-block: 74px 86px;
+  }
+
+  .hero-slideshow .hero-slide:first-child {
+    object-position: 62% center;
   }
 
   h1 {

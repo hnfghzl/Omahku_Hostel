@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const slides = [
   {
-    src: "/hero-omahku-landscape.jpg",
+    src: "/hero-omahku-landscape.webp",
     alt: "Pemandangan pegunungan dan awan dari kawasan Bromo",
   },
   {
