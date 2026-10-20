@@ -8,7 +8,7 @@ const phoneDisplay = "+62 838-6737-0668";
 const hostelAddress =
   "Timuran No.171, Brontokusuman, Kec. Mergangsan, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55153";
 const mapsLink =
-  "https://www.google.com/maps/search/?api=1&query=Timuran%20No.171%2C%20Brontokusuman%2C%20Kec.%20Mergangsan%2C%20Kota%20Yogyakarta%2C%20Daerah%20Istimewa%20Yogyakarta%2055153";
+  "https://www.google.com/maps/place/Omahku+Hostel/@-7.818298,110.369136,754m/data=!3m1!1e3!4m9!3m8!1s0x2e7a579fda776057:0x786e1767dec1dcb3!5m2!4m1!1i2!8m2!3d-7.8182471!4d110.3690848!16s%2Fg%2F11rmrx985z?entry=ttu&g_ep=EgoyMDI2MTAxNC4wIKXMDSoASAFQAw%3D%3D";
 
 const lodgingGallery = [
   { src: "/omahku-kamar.png", alt: "Kamar dengan tempat tidur susun di Omahku Hostel" },
