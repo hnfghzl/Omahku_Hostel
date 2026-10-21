@@ -481,6 +481,8 @@ h3 {
 }
 
 .lodging-gallery-item {
+  position: relative;
+  z-index: 1;
   display: block;
   width: 100%;
   min-height: 44px;
@@ -496,9 +498,13 @@ h3 {
   transform: scale(1.03);
 }
 
-.lodging-gallery img:first-child {
+.lodging-gallery-item:first-child {
   grid-column: span 2;
   grid-row: span 2;
+}
+
+.lodging-gallery-item img {
+  pointer-events: none;
 }
 
 .lodging-details h3 {
@@ -773,6 +779,7 @@ h3 {
 .destination-main-image img {
   object-fit: cover;
   object-position: center;
+  pointer-events: none;
   transition: transform 250ms ease;
 }
 
@@ -812,6 +819,7 @@ h3 {
   width: 100%;
   aspect-ratio: 1.5 / 1;
   object-fit: cover;
+  pointer-events: none;
 }
 
 .destination-summary {
