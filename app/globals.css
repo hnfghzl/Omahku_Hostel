@@ -1035,7 +1035,10 @@ h3 {
 
   .site-nav {
     flex-wrap: wrap;
+    width: 100%;
+    gap: 4px 10px;
     padding-block: 10px 12px;
+    padding-inline: 12px;
   }
 
   .site-nav .brand {
@@ -1060,7 +1063,7 @@ h3 {
     justify-content: space-between;
     gap: 6px;
     padding-top: 4px;
-    font-size: 13px;
+    font-size: 11px;
   }
 
   .nav-cta {
@@ -1072,7 +1075,7 @@ h3 {
   .hero {
     display: block;
     min-height: auto;
-    padding-block: 62px 64px;
+    padding: 148px 16px 58px;
   }
 
   .hero-slideshow .hero-slide:first-child {
@@ -1099,7 +1102,8 @@ h3 {
 
   .hero-note {
     max-width: none;
-    margin-top: 52px;
+    margin-top: 44px;
+    padding: 18px 0 0 14px;
   }
 
   .offering-section {
