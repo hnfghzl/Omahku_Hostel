@@ -345,8 +345,8 @@ h3 {
 
 .offering-section {
   display: grid;
-  grid-template-columns: minmax(220px, 0.8fr) minmax(0, 1.2fr);
-  gap: clamp(48px, 10vw, 150px);
+  grid-template-columns: minmax(280px, 1fr) minmax(0, 1.4fr);
+  gap: clamp(48px, 7vw, 96px);
 }
 
 .tour-section {
@@ -907,7 +907,17 @@ h3 {
   font-size: 12px;
 }
 
-@media (max-width: 850px) {
+@media (max-width: 1100px) {
+  .offering-section {
+    display: block;
+    padding-block: 80px;
+  }
+
+  .offering-section .section-heading {
+    max-width: 760px;
+    margin-bottom: 40px;
+  }
+
   .site-nav {
     min-height: 76px;
     padding-inline: 24px;
@@ -929,6 +939,10 @@ h3 {
 
   .tour-gallery {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .tour-card {
+    min-height: 280px;
   }
 }
 
