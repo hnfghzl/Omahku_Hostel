@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import HeroSlideshow from "./components/HeroSlideshow";
 
 const whatsappLink =
@@ -19,11 +20,28 @@ const lodgingGallery = [
   { src: "/omahku-kamar-mandi.png", alt: "Area wastafel dan kamar mandi" },
 ];
 
-const tourGallery = [
-  { src: "/tour-lava-merapi.png", alt: "Rombongan Lava Tour dengan jeep di depan Merapi" },
-  { src: "/tour-bromo-sunrise.png", alt: "Wisatawan menikmati pemandangan matahari terbit di Bromo" },
-  { src: "/tour-bromo-kelompok.png", alt: "Rombongan wisatawan di kawasan pegunungan Bromo" },
-  { src: "/tour-air-terjun.png", alt: "Wisatawan mengunjungi air terjun" },
+const tourDestinations = [
+  {
+    slug: "lava-tour",
+    src: "/tour-lava-merapi.png",
+    alt: "Rombongan Lava Tour dengan jeep di depan Merapi",
+    title: "Lava Tour Merapi",
+    description: "Susun perjalanan Lava Tour bersama Omahku.",
+  },
+  {
+    slug: "bromo",
+    src: "/tour-bromo-sunrise.png",
+    alt: "Wisatawan menikmati pemandangan matahari terbit di Bromo",
+    title: "Bromo",
+    description: "Bicarakan rute perjalanan menuju Bromo.",
+  },
+  {
+    slug: "lumajang",
+    src: "/tour-air-terjun.png",
+    alt: "Foto pendukung perjalanan ke destinasi Lumajang",
+    title: "Lumajang",
+    description: "Sampaikan destinasi Lumajang yang ingin Anda kunjungi.",
+  },
 ];
 
 export default function Home() {
@@ -152,12 +170,20 @@ export default function Home() {
               Tanyakan rute perjalanan
             </a>
           </div>
-          <div className="tour-gallery" aria-label="Galeri private tour">
-            {tourGallery.map((image) => (
-              <figure key={image.src}>
-                <Image src={image.src} alt={image.alt} width={720} height={480} />
-                <figcaption>{image.alt}</figcaption>
-              </figure>
+          <div className="tour-gallery" aria-label="Destinasi private tour">
+            {tourDestinations.map((destination) => (
+              <Link
+                className="tour-card"
+                href={`/private-tour/${destination.slug}`}
+                key={destination.slug}
+              >
+                <Image src={destination.src} alt={destination.alt} width={720} height={480} />
+                <span className="tour-card-content">
+                  <span className="tour-card-title">{destination.title}</span>
+                  <span className="tour-card-description">{destination.description}</span>
+                  <span className="tour-card-link">Lihat destinasi</span>
+                </span>
+              </Link>
             ))}
           </div>
         </div>
