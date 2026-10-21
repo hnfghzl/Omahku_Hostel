@@ -480,6 +480,22 @@ h3 {
   object-fit: cover;
 }
 
+.lodging-gallery-item {
+  display: block;
+  width: 100%;
+  min-height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  overflow: hidden;
+  background: transparent;
+  cursor: zoom-in;
+}
+
+.lodging-gallery-item:hover img {
+  transform: scale(1.03);
+}
+
 .lodging-gallery img:first-child {
   grid-column: span 2;
   grid-row: span 2;
@@ -744,14 +760,24 @@ h3 {
 
 .destination-main-image {
   position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
   aspect-ratio: 1.16 / 1;
   overflow: hidden;
   background: var(--stone);
+  cursor: zoom-in;
 }
 
 .destination-main-image img {
   object-fit: cover;
   object-position: center;
+  transition: transform 250ms ease;
+}
+
+.destination-main-image:hover img {
+  transform: scale(1.02);
 }
 
 .destination-thumbnails {
@@ -834,6 +860,45 @@ h3 {
   color: var(--ink);
   font-size: 14px;
   font-weight: 700;
+}
+
+.destination-lightbox {
+  position: fixed;
+  z-index: 20;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 48px;
+  background: rgba(16, 23, 21, 0.9);
+}
+
+.destination-lightbox-image {
+  position: relative;
+  width: min(1200px, 92vw);
+  height: min(78svh, 760px);
+}
+
+.destination-lightbox-image img {
+  object-fit: contain;
+}
+
+.destination-lightbox-close {
+  position: absolute;
+  z-index: 1;
+  top: 20px;
+  right: 24px;
+  min-height: 44px;
+  padding: 10px 16px;
+  border: 1px solid #fffaf4;
+  border-radius: 3px;
+  background: transparent;
+  color: #fffaf4;
+  cursor: pointer;
+}
+
+.destination-lightbox-close:hover {
+  background: #fffaf4;
+  color: var(--ink);
 }
 
 .process-section .section-heading {
@@ -1097,6 +1162,15 @@ h3 {
 
   .destination-summary .button {
     width: 100%;
+  }
+
+  .destination-lightbox {
+    padding: 24px 16px;
+  }
+
+  .destination-lightbox-image {
+    width: 100%;
+    height: 72svh;
   }
 
   .process-section {

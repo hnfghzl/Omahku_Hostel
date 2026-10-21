@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 type DestinationPageProps = {
   title: string;
@@ -24,10 +24,26 @@ export default function DestinationPage({
   gallery = [{ src: image, alt: imageAlt }],
 }: DestinationPageProps) {
   const [selectedPhoto, setSelectedPhoto] = useState(0);
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
     `Halo, saya ingin membicarakan private tour ${title} dari Omahku Hostel.`,
   )}`;
   const activePhoto = gallery[selectedPhoto] ?? gallery[0];
+
+  useEffect(() => {
+    if (!isLightboxOpen) {
+      return;
+    }
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setIsLightboxOpen(false);
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [isLightboxOpen]);
 
   return (
     <main className="destination-page">
@@ -57,7 +73,12 @@ export default function DestinationPage({
 
         <section className="destination-detail" aria-labelledby="destination-title">
           <div className={`destination-gallery${gallery.length === 1 ? " destination-gallery--single" : ""}`}>
-            <div className="destination-main-image">
+            <button
+              className="destination-main-image"
+              type="button"
+              aria-label={`Perbesar foto ${title}`}
+              onClick={() => setIsLightboxOpen(true)}
+            >
               <Image
                 src={activePhoto.src}
                 alt={activePhoto.alt}
@@ -65,7 +86,7 @@ export default function DestinationPage({
                 priority
                 sizes="(max-width: 900px) 100vw, 58vw"
               />
-            </div>
+            </button>
             {gallery.length > 1 && (
               <div className="destination-thumbnails" aria-label={`Foto ${title}`}>
                 {gallery.map((photo, index) => (
@@ -77,7 +98,7 @@ export default function DestinationPage({
                     aria-pressed={selectedPhoto === index}
                     onClick={() => setSelectedPhoto(index)}
                   >
-                    <Image src={photo.src} alt="" width={180} height={120} />
+                    <Image src={photo.src} alt={photo.alt} width={180} height={120} />
                   </button>
                 ))}
               </div>
@@ -104,6 +125,33 @@ export default function DestinationPage({
           Lihat semua destinasi private tour
         </Link>
       </div>
+
+      {isLightboxOpen && (
+        <div
+          className="destination-lightbox"
+          role="dialog"
+          aria-modal="true"
+          aria-label={`Foto besar ${title}`}
+          onClick={() => setIsLightboxOpen(false)}
+        >
+          <button
+            className="destination-lightbox-close"
+            type="button"
+            aria-label="Tutup foto besar"
+            onClick={() => setIsLightboxOpen(false)}
+          >
+            Tutup
+          </button>
+          <div className="destination-lightbox-image" onClick={(event) => event.stopPropagation()}>
+            <Image
+              src={activePhoto.src}
+              alt={activePhoto.alt}
+              fill
+              sizes="min(92vw, 1200px)"
+            />
+          </div>
+        </div>
+      )}
     </main>
   );
 }

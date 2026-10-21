@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import HeroSlideshow from "./components/HeroSlideshow";
+import ImageGalleryLightbox from "./components/ImageGalleryLightbox";
 
 const whatsappLink =
   "https://wa.me/6283867370668?text=Halo%2C%20saya%20ingin%20menyusun%20private%20tour%20dari%20Omahku%20Hostel.";
@@ -134,17 +135,7 @@ export default function Home() {
               </ul>
             </div>
           </div>
-          <div className="lodging-gallery" aria-label="Galeri Omahku Hostel">
-            {lodgingGallery.map((image) => (
-              <Image
-                key={image.src}
-                src={image.src}
-                alt={image.alt}
-                width={640}
-                height={480}
-              />
-            ))}
-          </div>
+          <ImageGalleryLightbox images={lodgingGallery} />
         </div>
       </section>
 
