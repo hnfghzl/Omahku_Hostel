@@ -64,7 +64,6 @@ export default function Home() {
         <div className="nav-links">
           <a href="#penginapan">Penginapan</a>
           <a href="#private-tour">Private tour</a>
-          <a href="#cara-kerja">Cara kerja</a>
         </div>
         <a className="nav-cta" href={whatsappLink} target="_blank" rel="noreferrer">
           Susun perjalanan
@@ -86,9 +85,6 @@ export default function Home() {
           <div className="hero-actions">
             <a className="button button-primary" href={whatsappLink} target="_blank" rel="noreferrer">
               Chat WhatsApp
-            </a>
-            <a className="text-link" href="#cara-kerja">
-              Lihat cara kerja
             </a>
           </div>
         </div>
@@ -174,36 +170,6 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
-
-      <section className="process-section" id="cara-kerja" aria-labelledby="process-title">
-        <div className="section-heading">
-          <p className="eyebrow">Cara kerja</p>
-          <h2 id="process-title">Mulai dari percakapan yang sederhana.</h2>
-        </div>
-        <ol className="process-list">
-          <li>
-            <span className="process-number">01</span>
-            <div>
-              <h3>Ceritakan rencana Anda</h3>
-              <p>Bagikan waktu yang tersedia, minat, dan hal yang ingin dihindari.</p>
-            </div>
-          </li>
-          <li>
-            <span className="process-number">02</span>
-            <div>
-              <h3>Susun arah perjalanan</h3>
-              <p>Kami membahas rute yang masuk akal untuk ritme perjalanan Anda.</p>
-            </div>
-          </li>
-          <li>
-            <span className="process-number">03</span>
-            <div>
-              <h3>Berangkat dari Omahku</h3>
-              <p>Detail perjalanan disepakati sebelum Anda memulai perjalanan.</p>
-            </div>
-          </li>
-        </ol>
       </section>
 
       <section className="contact-section" id="kontak" aria-labelledby="contact-title">
