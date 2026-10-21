@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 
 type DestinationPageProps = {
   title: string;
@@ -20,9 +23,11 @@ export default function DestinationPage({
   imageAlt,
   gallery = [{ src: image, alt: imageAlt }],
 }: DestinationPageProps) {
+  const [selectedPhoto, setSelectedPhoto] = useState(0);
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
     `Halo, saya ingin membicarakan private tour ${title} dari Omahku Hostel.`,
   )}`;
+  const activePhoto = gallery[selectedPhoto] ?? gallery[0];
 
   return (
     <main className="destination-page">
@@ -51,11 +56,11 @@ export default function DestinationPage({
         </nav>
 
         <section className="destination-detail" aria-labelledby="destination-title">
-          <div className="destination-gallery">
+          <div className={`destination-gallery${gallery.length === 1 ? " destination-gallery--single" : ""}`}>
             <div className="destination-main-image">
               <Image
-                src={image}
-                alt={imageAlt}
+                src={activePhoto.src}
+                alt={activePhoto.alt}
                 fill
                 priority
                 sizes="(max-width: 900px) 100vw, 58vw"
@@ -63,14 +68,17 @@ export default function DestinationPage({
             </div>
             {gallery.length > 1 && (
               <div className="destination-thumbnails" aria-label={`Foto ${title}`}>
-                {gallery.map((photo) => (
-                  <Image
+                {gallery.map((photo, index) => (
+                  <button
+                    className={`destination-thumbnail${selectedPhoto === index ? " is-selected" : ""}`}
                     key={photo.src}
-                    src={photo.src}
-                    alt={photo.alt}
-                    width={180}
-                    height={120}
-                  />
+                    type="button"
+                    aria-label={`Tampilkan foto ${index + 1} dari ${title}`}
+                    aria-pressed={selectedPhoto === index}
+                    onClick={() => setSelectedPhoto(index)}
+                  >
+                    <Image src={photo.src} alt="" width={180} height={120} />
+                  </button>
                 ))}
               </div>
             )}

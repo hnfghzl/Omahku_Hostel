@@ -732,12 +732,19 @@ h3 {
 }
 
 .destination-gallery {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 180px;
+  gap: 12px;
   min-width: 0;
+}
+
+.destination-gallery--single {
+  display: block;
 }
 
 .destination-main-image {
   position: relative;
-  min-height: 570px;
+  aspect-ratio: 1.16 / 1;
   overflow: hidden;
   background: var(--stone);
 }
@@ -749,12 +756,32 @@ h3 {
 
 .destination-thumbnails {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 10px;
-  margin-top: 10px;
+  align-content: start;
+  gap: 12px;
 }
 
-.destination-thumbnails img {
+.destination-thumbnail {
+  position: relative;
+  display: block;
+  width: 100%;
+  min-height: 44px;
+  padding: 0;
+  border: 2px solid transparent;
+  border-radius: 0;
+  overflow: hidden;
+  background: var(--stone);
+  cursor: pointer;
+}
+
+.destination-thumbnail:hover {
+  border-color: var(--clay);
+}
+
+.destination-thumbnail.is-selected {
+  border-color: var(--clay-dark);
+}
+
+.destination-thumbnail img {
   display: block;
   width: 100%;
   aspect-ratio: 1.5 / 1;
@@ -1044,8 +1071,16 @@ h3 {
     display: block;
   }
 
+  .destination-gallery {
+    grid-template-columns: minmax(0, 1fr) 120px;
+  }
+
   .destination-main-image {
-    min-height: 380px;
+    aspect-ratio: 1.05 / 1;
+  }
+
+  .destination-thumbnails {
+    gap: 8px;
   }
 
   .destination-summary {
