@@ -1035,7 +1035,23 @@ h3 {
 
   .site-nav {
     flex-wrap: wrap;
-    padding-block: 16px;
+    padding-block: 10px 12px;
+  }
+
+  .site-nav .brand {
+    gap: 7px;
+    font-size: 17px;
+  }
+
+  .site-nav .brand-mark {
+    width: 32px;
+    height: 32px;
+    font-size: 15px;
+  }
+
+  .site-nav .brand small {
+    margin-top: 3px;
+    font-size: 8px;
   }
 
   .nav-links {
@@ -1049,14 +1065,14 @@ h3 {
 
   .nav-cta {
     min-height: 44px;
-    padding-inline: 13px;
+    padding: 9px 11px;
     font-size: 12px;
   }
 
   .hero {
     display: block;
     min-height: auto;
-    padding-block: 74px 86px;
+    padding-block: 62px 64px;
   }
 
   .hero-slideshow .hero-slide:first-child {
@@ -1064,33 +1080,44 @@ h3 {
   }
 
   h1 {
-    font-size: clamp(3rem, 15vw, 4.6rem);
+    font-size: clamp(2.5rem, 13vw, 3.6rem);
+  }
+
+  h2 {
+    font-size: clamp(2rem, 10vw, 2.9rem);
+    line-height: 1.05;
+  }
+
+  h3 {
+    font-size: 22px;
   }
 
   .hero-intro {
-    font-size: 16px;
+    font-size: 15px;
+    line-height: 1.55;
   }
 
   .hero-note {
     max-width: none;
-    margin-top: 72px;
+    margin-top: 52px;
   }
 
   .offering-section {
     display: block;
-    padding-block: 76px;
+    padding-block: 56px;
   }
 
   .offering-section .section-heading {
-    margin-bottom: 42px;
+    margin-bottom: 28px;
   }
 
   .service-content > p {
-    font-size: 18px;
+    font-size: 16px;
+    line-height: 1.55;
   }
 
   .tour-intro {
-    padding: 25px;
+    padding: 20px;
   }
 
   .lodging-panel {
@@ -1098,19 +1125,38 @@ h3 {
   }
 
   .lodging-image {
-    max-height: 390px;
+    max-height: 300px;
   }
 
   .lodging-details {
-    padding: 25px;
+    padding: 20px;
+  }
+
+  .lodging-price {
+    margin-bottom: 18px;
+    font-size: 26px;
+  }
+
+  .facility-list {
+    gap: 9px;
+    font-size: 14px;
+  }
+
+  .tour-intro h3 {
+    margin-bottom: 12px;
+  }
+
+  .tour-intro p {
+    font-size: 14px;
+    line-height: 1.55;
   }
 
   .lodging-gallery {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-auto-rows: 125px;
+    grid-auto-rows: 96px;
   }
 
-  .lodging-gallery img:first-child {
+  .lodging-gallery-item:first-child {
     grid-column: span 2;
   }
 
@@ -1119,16 +1165,16 @@ h3 {
   }
 
   .tour-card {
-    min-height: 270px;
+    min-height: 220px;
   }
 
   .destination-nav {
     width: min(100% - 32px, 540px);
-    min-height: 76px;
+    min-height: 64px;
   }
 
   .destination-nav .text-link {
-    font-size: 13px;
+    font-size: 12px;
   }
 
   .destination-shell {
@@ -1136,8 +1182,8 @@ h3 {
   }
 
   .destination-breadcrumb {
-    padding-block: 16px 22px;
-    font-size: 13px;
+    padding-block: 12px 16px;
+    font-size: 12px;
   }
 
   .destination-detail {
@@ -1145,27 +1191,36 @@ h3 {
   }
 
   .destination-gallery {
-    grid-template-columns: minmax(0, 1fr) 120px;
+    display: block;
   }
 
   .destination-main-image {
-    aspect-ratio: 1.05 / 1;
+    aspect-ratio: 1.35 / 1;
   }
 
   .destination-thumbnails {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 8px;
+    margin-top: 8px;
   }
 
   .destination-summary {
-    padding-top: 36px;
+    padding-top: 28px;
   }
 
   .destination-summary h1 {
-    font-size: clamp(3rem, 15vw, 4.6rem);
+    margin-bottom: 16px;
+    font-size: clamp(2.5rem, 13vw, 3.6rem);
+  }
+
+  .destination-departure {
+    margin-bottom: 16px;
+    font-size: 16px;
   }
 
   .destination-description {
-    font-size: 16px;
+    font-size: 15px;
+    line-height: 1.6;
   }
 
   .destination-summary .button {
@@ -1182,16 +1237,16 @@ h3 {
   }
 
   .process-section {
-    padding-block: 76px;
+    padding-block: 56px;
   }
 
   .process-section .section-heading {
-    margin-bottom: 44px;
+    margin-bottom: 30px;
   }
 
   .process-list {
     grid-template-columns: 1fr;
-    gap: 34px;
+    gap: 26px;
   }
 
   .process-list li {
@@ -1206,11 +1261,11 @@ h3 {
 
   .contact-section {
     display: block;
-    padding: 44px 25px;
+    padding: 34px 20px;
   }
 
   .contact-section h2 {
-    margin-bottom: 34px;
+    margin-bottom: 24px;
   }
 
   .button-light {
@@ -1219,7 +1274,7 @@ h3 {
 
   .site-footer {
     display: block;
-    padding-block: 26px 34px;
+    padding-block: 22px 28px;
   }
 
   .site-footer span {
