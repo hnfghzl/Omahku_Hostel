@@ -36,11 +36,11 @@ const tourDestinations = [
     description: "Bicarakan rute perjalanan menuju Bromo.",
   },
   {
-    slug: "lumajang",
+    slug: "tumpak-sewu",
     src: "/tour-air-terjun.png",
-    alt: "Foto pendukung perjalanan ke destinasi Lumajang",
-    title: "Lumajang",
-    description: "Sampaikan destinasi Lumajang yang ingin Anda kunjungi.",
+    alt: "Wisatawan mengunjungi air terjun Tumpak Sewu",
+    title: "Tumpak Sewu",
+    description: "Bicarakan perjalanan menuju Tumpak Sewu.",
   },
 ];
 
@@ -76,7 +76,7 @@ export default function Home() {
           </h1>
           <p className="hero-intro">
             Omahku Hostel menyediakan penginapan sekaligus private tour untuk
-            membantu Anda menjelajahi Jogja, Merapi, Bromo, Lumajang, dan
+            membantu Anda menjelajahi Jogja, Merapi, Bromo, Tumpak Sewu, dan
             destinasi lain sesuai rencana perjalanan Anda.
           </p>
           <div className="hero-actions">
@@ -160,7 +160,7 @@ export default function Home() {
           </p>
           <div className="tour-intro">
             <span className="panel-kicker">Private tour</span>
-            <h3>Mulai dari Lava Tour, Bromo, dan Lumajang.</h3>
+            <h3>Mulai dari Lava Tour, Bromo, dan Tumpaksewu.</h3>
             <p>
               Kami juga melayani pembicaraan untuk destinasi wisata lainnya.
               Sampaikan waktu, jumlah peserta, dan tempat yang ingin Anda

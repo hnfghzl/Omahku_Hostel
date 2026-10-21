@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Omahku Hostel | Private tour di Jogja",
   description:
-    "Penginapan dan private tour dari Omahku Hostel untuk menjelajahi Jogja, Merapi, Bromo, Lumajang, dan destinasi lainnya.",
+    "Penginapan dan private tour dari Omahku Hostel untuk menjelajahi Jogja, Merapi, Bromo, Tumpak Sewu, dan destinasi lainnya.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
