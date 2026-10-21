@@ -557,15 +557,16 @@ h3 {
 
 .tour-gallery {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 10px;
   margin-top: 10px;
 }
 
 .tour-card {
   position: relative;
-  min-height: 310px;
+  min-height: 330px;
   overflow: hidden;
+  border-radius: 24px;
   background: var(--surface);
   color: #fffaf4;
   text-decoration: none;
@@ -592,32 +593,47 @@ h3 {
   bottom: 20px;
   left: 20px;
   display: grid;
-  gap: 8px;
+  gap: 5px;
+  transform: translateY(8px);
+  transition: transform 250ms ease;
 }
 
 .tour-card-title {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 30px;
+  font-size: clamp(22px, 2.2vw, 30px);
 }
 
-.tour-card-description {
-  max-width: 320px;
+.tour-card-duration {
   color: #f4e9dc;
   font-size: 14px;
-  line-height: 1.45;
+}
+
+.tour-card-price {
+  color: #fffaf4;
+  font-size: 26px;
+  font-weight: 700;
 }
 
 .tour-card-link {
-  width: fit-content;
-  color: #f1c0a8;
+  justify-self: end;
+  min-width: 104px;
+  min-height: 44px;
+  padding: 12px 18px;
+  border-radius: 3px;
+  background: #fffaf4;
+  color: var(--clay);
   font-size: 13px;
   font-weight: 700;
-  text-decoration: underline;
-  text-underline-offset: 5px;
+  text-align: center;
 }
 
 .tour-card:hover img {
   transform: scale(1.03);
+}
+
+.tour-card:hover .tour-card-content,
+.tour-card:focus-visible .tour-card-content {
+  transform: translateY(0);
 }
 
 .tour-card img {
@@ -1022,6 +1038,10 @@ h3 {
   .offering-section {
     gap: 48px;
   }
+
+  .tour-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 640px) {
@@ -1170,6 +1190,25 @@ h3 {
 
   .tour-card {
     min-height: 220px;
+  }
+
+  .tour-card-content {
+    right: 14px;
+    bottom: 14px;
+    left: 14px;
+  }
+
+  .tour-card-title {
+    font-size: 21px;
+  }
+
+  .tour-card-price {
+    font-size: 21px;
+  }
+
+  .tour-card-link {
+    min-width: 88px;
+    padding-inline: 12px;
   }
 
   .destination-nav {

@@ -26,22 +26,25 @@ const tourDestinations = [
     slug: "lava-tour",
     src: "/tour-lava-merapi.png",
     alt: "Rombongan Lava Tour dengan jeep di depan Merapi",
-    title: "Lava Tour Merapi",
-    description: "Susun perjalanan Lava Tour bersama Omahku.",
+    title: "Paket Lava Tour",
+    duration: "Paket 1 Hari",
+    price: "Rp300.000",
   },
   {
     slug: "bromo",
     src: "/tour-bromo-sunrise.png",
     alt: "Wisatawan menikmati pemandangan matahari terbit di Bromo",
-    title: "Bromo",
-    description: "Bicarakan rute perjalanan menuju Bromo.",
+    title: "Paket Bromo",
+    duration: "Paket 1 Hari",
+    price: "Rp300.000",
   },
   {
     slug: "tumpak-sewu",
     src: "/tour-air-terjun.png",
     alt: "Wisatawan mengunjungi air terjun Tumpak Sewu",
-    title: "Tumpak Sewu",
-    description: "Bicarakan perjalanan menuju Tumpak Sewu.",
+    title: "Paket Tumpak Sewu",
+    duration: "Paket 1 Hari",
+    price: "Rp300.000",
   },
 ];
 
@@ -171,8 +174,9 @@ export default function Home() {
                 <Image src={destination.src} alt={destination.alt} width={720} height={480} />
                 <span className="tour-card-content">
                   <span className="tour-card-title">{destination.title}</span>
-                  <span className="tour-card-description">{destination.description}</span>
-                  <span className="tour-card-link">Lihat destinasi</span>
+                  <span className="tour-card-duration">{destination.duration}</span>
+                  <span className="tour-card-price">{destination.price}</span>
+                  <span className="tour-card-link">Detail</span>
                 </span>
               </Link>
             ))}
