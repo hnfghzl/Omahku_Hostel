@@ -92,14 +92,6 @@ export default function Home() {
             </a>
           </div>
         </div>
-        <div className="hero-note" aria-label="Catatan layanan">
-          <span className="contour-line" aria-hidden="true" />
-          <p className="note-label">Tempat singgah</p>
-          <p className="note-title">Omahku Hostel</p>
-          <p className="note-copy">
-            Menginap di Jogja, lalu bicarakan rute yang ingin Anda jelajahi.
-          </p>
-        </div>
       </section>
 
       <section className="offering-section lodging-section" id="penginapan" aria-labelledby="lodging-title">
