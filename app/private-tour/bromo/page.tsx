@@ -8,6 +8,16 @@ export default function BromoPage() {
       description="Bicarakan rute perjalanan ke Bromo, termasuk waktu dan tempat yang ingin Anda kunjungi."
       image="/tour-bromo-sunrise.png"
       imageAlt="Wisatawan menikmati pemandangan matahari terbit di Bromo"
+      gallery={[
+        {
+          src: "/tour-bromo-sunrise.png",
+          alt: "Wisatawan menikmati pemandangan matahari terbit di Bromo",
+        },
+        {
+          src: "/tour-bromo-kelompok.png",
+          alt: "Rombongan wisatawan di kawasan pegunungan Bromo",
+        },
+      ]}
     />
   );
 }

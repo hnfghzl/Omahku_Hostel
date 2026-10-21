@@ -698,6 +698,117 @@ h3 {
   line-height: 1.65;
 }
 
+.destination-shell {
+  width: min(1280px, calc(100% - 64px));
+  margin-inline: auto;
+}
+
+.destination-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-block: 20px 24px;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.destination-breadcrumb a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.destination-breadcrumb a:hover,
+.destination-back-link:hover {
+  color: var(--clay-dark);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.destination-detail {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+  gap: clamp(34px, 4vw, 64px);
+  align-items: start;
+}
+
+.destination-gallery {
+  min-width: 0;
+}
+
+.destination-main-image {
+  position: relative;
+  min-height: 570px;
+  overflow: hidden;
+  background: var(--stone);
+}
+
+.destination-main-image img {
+  object-fit: cover;
+  object-position: center;
+}
+
+.destination-thumbnails {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.destination-thumbnails img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1.5 / 1;
+  object-fit: cover;
+}
+
+.destination-summary {
+  padding-top: 12px;
+}
+
+.destination-summary .panel-kicker {
+  margin-bottom: 20px;
+}
+
+.destination-summary h1 {
+  max-width: 560px;
+  margin-bottom: 22px;
+  color: var(--ink);
+  font-size: clamp(3rem, 5vw, 5.2rem);
+  line-height: 0.98;
+}
+
+.destination-departure {
+  margin-bottom: 20px;
+  color: var(--ink);
+  font-size: 18px;
+}
+
+.destination-rule {
+  width: 100%;
+  height: 1px;
+  margin-bottom: 24px;
+  background: var(--line);
+}
+
+.destination-description {
+  max-width: 560px;
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.destination-summary .button {
+  margin-top: 12px;
+}
+
+.destination-back-link {
+  display: inline-block;
+  margin-block: 48px 72px;
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 700;
+}
+
 .process-section .section-heading {
   margin-bottom: 60px;
 }
@@ -920,30 +1031,37 @@ h3 {
     font-size: 13px;
   }
 
-  .destination-hero {
-    min-height: 590px;
-  }
-
-  .destination-hero-copy,
-  .destination-content {
+  .destination-shell {
     width: min(100% - 32px, 540px);
   }
 
-  .destination-hero-copy {
-    padding-block: 52px;
+  .destination-breadcrumb {
+    padding-block: 16px 22px;
+    font-size: 13px;
   }
 
-  .destination-hero-copy h1 {
+  .destination-detail {
+    display: block;
+  }
+
+  .destination-main-image {
+    min-height: 380px;
+  }
+
+  .destination-summary {
+    padding-top: 36px;
+  }
+
+  .destination-summary h1 {
     font-size: clamp(3rem, 15vw, 4.6rem);
   }
 
-  .destination-content {
-    display: block;
-    padding-block: 76px;
+  .destination-description {
+    font-size: 16px;
   }
 
-  .destination-content h2 {
-    margin-bottom: 42px;
+  .destination-summary .button {
+    width: 100%;
   }
 
   .process-section {

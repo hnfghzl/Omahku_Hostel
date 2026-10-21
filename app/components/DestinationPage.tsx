@@ -7,6 +7,7 @@ type DestinationPageProps = {
   description: string;
   image: string;
   imageAlt: string;
+  gallery?: { src: string; alt: string }[];
 };
 
 const whatsappNumber = "6283867370668";
@@ -17,6 +18,7 @@ export default function DestinationPage({
   description,
   image,
   imageAlt,
+  gallery = [{ src: image, alt: imageAlt }],
 }: DestinationPageProps) {
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
     `Halo, saya ingin membicarakan private tour ${title} dari Omahku Hostel.`,
@@ -39,34 +41,61 @@ export default function DestinationPage({
         </Link>
       </nav>
 
-      <section className="destination-hero" aria-labelledby="destination-title">
-        <div className="destination-hero-image">
-          <Image src={image} alt={imageAlt} fill priority sizes="(max-width: 640px) 100vw, 52vw" />
-        </div>
-        <div className="destination-hero-scrim" aria-hidden="true" />
-        <div className="destination-hero-copy">
-          <p className="eyebrow">{eyebrow}</p>
-          <h1 id="destination-title">{title}</h1>
-          <p>{description}</p>
-        </div>
-      </section>
+      <div className="destination-shell">
+        <nav className="destination-breadcrumb" aria-label="Breadcrumb">
+          <Link href="/">Beranda</Link>
+          <span aria-hidden="true">/</span>
+          <Link href="/#private-tour">Private tour</Link>
+          <span aria-hidden="true">/</span>
+          <span>{title}</span>
+        </nav>
 
-      <section className="destination-content" aria-labelledby="conversation-title">
-        <div>
-          <p className="eyebrow">Bicarakan rute</p>
-          <h2 id="conversation-title">Mulai dari rencana perjalanan Anda.</h2>
-        </div>
-        <div className="destination-details">
-          <p>
-            Sampaikan waktu, jumlah peserta, dan tempat yang ingin Anda kunjungi.
-            Omahku akan membantu membicarakan arah perjalanan yang sesuai dengan
-            rencana Anda.
-          </p>
-          <a className="button button-primary" href={whatsappLink} target="_blank" rel="noreferrer">
-            Bicarakan {title}
-          </a>
-        </div>
-      </section>
+        <section className="destination-detail" aria-labelledby="destination-title">
+          <div className="destination-gallery">
+            <div className="destination-main-image">
+              <Image
+                src={image}
+                alt={imageAlt}
+                fill
+                priority
+                sizes="(max-width: 900px) 100vw, 58vw"
+              />
+            </div>
+            {gallery.length > 1 && (
+              <div className="destination-thumbnails" aria-label={`Foto ${title}`}>
+                {gallery.map((photo) => (
+                  <Image
+                    key={photo.src}
+                    src={photo.src}
+                    alt={photo.alt}
+                    width={180}
+                    height={120}
+                  />
+                ))}
+              </div>
+            )}
+          </div>
+
+          <div className="destination-summary">
+            <p className="panel-kicker">{eyebrow}</p>
+            <h1 id="destination-title">{title}</h1>
+            <p className="destination-departure">Waktu perjalanan dibicarakan bersama</p>
+            <div className="destination-rule" aria-hidden="true" />
+            <p className="destination-description">{description}</p>
+            <p className="destination-description">
+              Sampaikan waktu, jumlah peserta, dan tempat yang ingin Anda kunjungi.
+              Kami akan membantu membahas rute private tour dari Omahku Hostel.
+            </p>
+            <a className="button button-primary" href={whatsappLink} target="_blank" rel="noreferrer">
+              Bicarakan {title}
+            </a>
+          </div>
+        </section>
+
+        <Link className="destination-back-link" href="/#private-tour">
+          Lihat semua destinasi private tour
+        </Link>
+      </div>
     </main>
   );
 }
