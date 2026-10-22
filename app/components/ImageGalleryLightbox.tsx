@@ -2,10 +2,12 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { ZoomIn } from "lucide-react";
 
 type GalleryImage = {
   src: string;
   alt: string;
+  caption?: string;
 };
 
 type ImageGalleryLightboxProps = {
@@ -38,10 +40,23 @@ export default function ImageGalleryLightbox({ images }: ImageGalleryLightboxPro
             className="lodging-gallery-item"
             key={image.src}
             type="button"
-            aria-label={`Perbesar foto: ${image.alt}`}
+            aria-label={`Perbesar foto: ${image.caption || image.alt}`}
             onClick={() => setSelectedImage(image)}
           >
-            <Image src={image.src} alt={image.alt} width={640} height={480} />
+            <div className="lodging-gallery-thumb">
+              <Image
+                src={image.src}
+                alt={image.alt}
+                fill
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                className="lodging-thumb-img"
+              />
+              <div className="lodging-thumb-overlay" />
+              {image.caption && <span className="lodging-gallery-caption">{image.caption}</span>}
+              <span className="lodging-gallery-zoom" aria-hidden="true">
+                <ZoomIn size={15} />
+              </span>
+            </div>
           </button>
         ))}
       </div>

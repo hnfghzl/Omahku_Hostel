@@ -1,13 +1,12 @@
+import type { Metadata } from "next";
 import DestinationPage from "../../components/DestinationPage";
 
+export const metadata: Metadata = {
+  title: "Private Tour Lava Tour Merapi | Omahku Hostel Jogja",
+  description:
+    "Petualangan jeep offroad menyusuri jejak erupsi Gunung Merapi, Bunker Kaliadem, Museum Sisa Hartaku, dan manuver air. Berangkat privat dari Omahku Hostel Jogja.",
+};
+
 export default function LavaTourPage() {
-  return (
-    <DestinationPage
-      title="Lava Tour Merapi"
-      eyebrow="Private tour Omahku"
-      description="Bicarakan perjalanan Lava Tour Merapi dengan titik berangkat dari Omahku Hostel."
-      image="/tour-lava-merapi.png"
-      imageAlt="Rombongan Lava Tour dengan jeep di depan Merapi"
-    />
-  );
+  return <DestinationPage slug="lava-tour" />;
 }

@@ -1,23 +1,12 @@
+import type { Metadata } from "next";
 import DestinationPage from "../../components/DestinationPage";
 
+export const metadata: Metadata = {
+  title: "Private Tour Sunrise Gunung Bromo | Omahku Hostel Jogja",
+  description:
+    "Saksikan keindahan golden sunrise Penanjakan, kawah aktif Gunung Bromo, dan Lautan Pasir. Private tour nyaman berangkat malam dari Omahku Hostel Jogja.",
+};
+
 export default function BromoPage() {
-  return (
-    <DestinationPage
-      title="Bromo"
-      eyebrow="Private tour Omahku"
-      description="Bicarakan rute perjalanan ke Bromo, termasuk waktu dan tempat yang ingin Anda kunjungi."
-      image="/tour-bromo-sunrise.png"
-      imageAlt="Wisatawan menikmati pemandangan matahari terbit di Bromo"
-      gallery={[
-        {
-          src: "/tour-bromo-sunrise.png",
-          alt: "Wisatawan menikmati pemandangan matahari terbit di Bromo",
-        },
-        {
-          src: "/tour-bromo-kelompok.png",
-          alt: "Rombongan wisatawan di kawasan pegunungan Bromo",
-        },
-      ]}
-    />
-  );
+  return <DestinationPage slug="bromo" />;
 }
